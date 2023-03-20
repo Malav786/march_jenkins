@@ -95,7 +95,7 @@ pipeline {
 //                 }
 //             }
 //         }
-//    }
+    }
     post{
         always{
             echo 'Executing always...'
@@ -107,4 +107,4 @@ pipeline {
             echo 'Executing failure'
         }
     }
-}
+//}
