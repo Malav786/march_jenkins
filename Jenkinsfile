@@ -95,7 +95,7 @@ pipeline {
 //                 }
 //             }
 //         }
-    }
+//    }
     post{
         always{
             echo 'Executing always...'
