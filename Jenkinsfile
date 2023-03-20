@@ -12,7 +12,7 @@ pipeline {
     }
     
     tools{
-        maven 'maven-3.9.0'
+        maven 'mvn'
     }
 
     stages {
