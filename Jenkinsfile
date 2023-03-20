@@ -62,7 +62,7 @@ pipeline {
         
             steps {
                 script{echo 'deploying the application'
-                withCredentials([usernamePassword(credentialsId: '22ab41ed-cae7-49cd-b4e0-f53f6a649409', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
+                withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
                     sh "echo ${PASSWORD} | docker login -u ${USERNAME} --password-stdin"
                     sh "docker push 20it013/march:${IMAGE_NAME}"
                 }
