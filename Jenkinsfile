@@ -47,7 +47,7 @@ pipeline {
                     sh 'mvn clean package'
                     def version = (readFile('pom.xml') =~ '<version>(.+)</version>')[0][2]
                     env.IMAGE_NAME = "$version-$BUILD_NUMBER"
-                    sh "docker build -t 20it013/march:${IMAGE_NAME} ."
+                    sh "docker build -t 20it013/march:null-7 ."
                     }
             }
         }
@@ -78,7 +78,7 @@ pipeline {
                 script{echo 'deploying the application...'
                 withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
                     sh "echo ${PASSWORD} | docker login -u ${USERNAME} --password-stdin"
-                    sh "docker push 20it013/march:${IMAGE_NAME}"
+                    sh "docker push 20it013/march:null-7"
                 }}
 
              }
